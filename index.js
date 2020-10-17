@@ -1,20 +1,10 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 
-bot.commandPrefix = "f/"
 
 bot.on('ready', function () {
   console.log("Le bot est connecté !")
 })
-
-client.on('guildMemberAdd', member => {
-    const welcomechanel = member.guild.channels.find((x) => x.id === '707996311894491246' );
-    let b_embed = new Discord.RichEmbed()
-    .setColor('RANDOM')
-    .setDescription(`hey ${member.user.username} il nous a rejoin`)
-    return welcomechanel.send(b_embed)
-})
-
 
 //bot.on('message', (message) => {
   //if (message.content == '/muteAll') {
