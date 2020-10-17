@@ -60,13 +60,13 @@ bot.on('ready', function () {
 // Message de réponse //
 
  bot.on('message', message => {
-     if (message.content === 'f/1') {
+     if (message.content === '/1') {
        message.channel.send('et 2 et 3')
      }
    })
 
 bot.on('message', message => {
-     if (message.content === 'f/help') {
+     if (message.content === '/help') {
        message.channel.send('
                             Toute les commandes disponible son :
                             
