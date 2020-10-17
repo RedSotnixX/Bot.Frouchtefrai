@@ -1,37 +1,11 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 
+bot.commandPrefix = "f/"
 
 bot.on('ready', function () {
   console.log("Le bot est connecté !")
 })
-
-bot.on('ready', function () {
-    bot.user.setActivity('rien').catch(console.error)
-})
-
-bot.on("message", async message => {
-
-  if(message.author.bot) return;
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-
-if(command === "clear") {
-    // This command removes all messages from all users in the channel, up to 100.
-
-    // get the delete count, as an actual number.
-    const deleteCount = parseInt(args[0], 10);
-
-    // Ooooh nice, combined conditions. <3
-    if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("S'il te plaît énnonce un nombre entre 2 et 100 pour les messages a suuprimés");
-
-    // So we get our messages, and delete them. Simple enough, right?
-    const fetched = await message.channel.fetchMessages({limit: deleteCount});
-    message.channel.bulkDelete(fetched)
-      .catch(error => message.reply(`Les messages n'ont pas été supprimer parce que: ${error}`));
-  }
-});
 
 //bot.on('message', (message) => {
   //if (message.content == '/muteAll') {
