@@ -64,7 +64,7 @@ bot.on('ready', function () {
 
  bot.on('message', message => {
      if (message.content === '/1') {
-       message.channel.send('et 2')
+       message.channel.send('et 2 et 3')
      }
    })
 
