@@ -65,17 +65,17 @@ bot.on('ready', function () {
      }
    })
 
-//bot.on('message', message => {
-   //  if (message.content === '/help') {
-     //  message.channel.send('
-              //              Toute les commandes disponible son :
-              //              
-              //              ***f/1*** dit et 2 et 3
-               //             ***f/help*** Liste les commandes disponibles
-               //             
-               //            ')
-   //  }
-  // })
+bot.on('message', message => {
+     if (message.content === 'f/help') {
+       message.channel.send('
+Toute les commandes disponible son :
+
+***f/1*** dit et 2 et 3
+***f/help*** Liste les commandes disponibles
+
+ ')
+     }
+   })
 
   
 bot.login(process.env.BOT_TOKEN)
