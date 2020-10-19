@@ -67,7 +67,7 @@ bot.on('ready', function () {
 
  bot.on('message', message => {
      if (message.content === 'f/help') {
-       message.channel.send('Les commandes disponibles sont '''f/1''' et '''f/help'''. Pour Amoug us la commande help est '''f/au''' help')
+       message.channel.send('Les commandes disponibles sont ```f/1``` et ```f/help```. Pour Amoug us la commande help est ```f/au help```')
      }
    })
 
