@@ -27,14 +27,14 @@ bot.on("message", async message => {
   if (!message.content.startsWith(prefix)) return;
 
   const serverQueue = queue.get(message.guild.id);
-
-  if (message.content.startsWith(`${prefix}play`)) {
+  
+  if (message.content === 'f/play')) {
     execute(message, serverQueue);
     return;
-  } else if (message.content.startsWith(`${prefix}skip`)) {
+  } else if (message.content === 'f/skip')) {
     skip(message, serverQueue);
     return;
-  } else if (message.content.startsWith(`${prefix}stop`)) {
+  } else if (message.content === 'f/stop')) {
     stop(message, serverQueue);
     return;
   } else {
