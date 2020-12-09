@@ -14,11 +14,11 @@ bot.once("ready", () => {
   console.log("Ready!");
 });
 
-bot.once("reconnecting", () => {
+bot.once("reconnecting", function () {
   console.log("Reconnecting!");
 });
 
-bot.once("disconnect", () => {
+bot.once("disconnect", function () {
   console.log("Disconnect!");
 });
 
