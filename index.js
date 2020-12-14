@@ -8,7 +8,7 @@ const botsettings = require('./botsettings.json')
 
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online`)
-    bot.user.setActivity("Red", {type: ""});
+    bot.user.setActivity("Space Engineers", {type: ""});
 })
 
 // Message de réponse //
