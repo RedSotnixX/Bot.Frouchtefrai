@@ -1,7 +1,6 @@
-const Discord = require('discord.js');
-const botsettings = require('./botsettings.json');
-
-const bot = new Discord.Client({disableEveryone: true});
+const Discord = require('discord.js')
+const botsettings = require('./botsettings.json')
+const bot = new Discord.Client({disableEveryone: true})
 
 // bot.on('ready', function () {
 //   console.log("Le bot est connecté !")
