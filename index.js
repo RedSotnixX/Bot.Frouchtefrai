@@ -42,7 +42,7 @@ bot.on("ready", async () => {
   
  bot.on('message', message => {
      if (message.content === `${prefix}serveur`) {
-       message.channel.send(`Le nom du serveur est : ${message.guild.name}`);
+       message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
      }
    })
 
