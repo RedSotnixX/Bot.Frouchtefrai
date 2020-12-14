@@ -14,7 +14,7 @@ bot.on("ready", async () => {
 // Message de réponse //
 
  bot.on('message', message => {
-     if (message.content === 'f/1') {
+     if (message.content === `${prefix}ping`) {
        message.channel.send('et 2 et 3')
      }
    })
