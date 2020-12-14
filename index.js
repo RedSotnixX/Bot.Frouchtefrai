@@ -24,6 +24,16 @@ const args = message.content.slice(prefix.length).trim().split(' ');
 const command = args.shift().toLowerCase();
 
  bot.on('message', message => {
+     if (command === 'args-info') {
+	    if (!args.length) {
+		    return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+	}
+
+	message.channel.send(`Command name: ${command}\nArguments: ${args}`);
+}
+})
+
+ bot.on('message', message => {
      if (message.content === `${prefix}bot`) {
        message.reply('je suis là :D')
      }
