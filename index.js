@@ -46,4 +46,10 @@ bot.on("ready", async () => {
      }
    })
 
+ bot.on('message', message => {
+     if (message.content === `${prefix}moi`) {
+       message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+     }
+   })
+
 bot.login(process.env.BOT_TOKEN)
