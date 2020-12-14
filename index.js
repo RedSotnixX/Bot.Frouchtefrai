@@ -42,13 +42,13 @@ bot.on("ready", async () => {
   
  bot.on('message', message => {
      if (message.content === `${prefix}serveur`) {
-       message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
+       message.channel.send(`Nom du serveur: ${message.guild.name}\nNombre total de membres: ${message.guild.memberCount}`);
      }
    })
 
  bot.on('message', message => {
      if (message.content === `${prefix}moi`) {
-       message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+       message.channel.send(`Nom d'utilisateur: ${message.author.username}\nTon ID: ${message.author.id}`);
      }
    })
 
