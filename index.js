@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const config = require('./config.json');
 const { prefix } = require('./config.json');
 const bot = new Discord.Client({disableEveryone: true})
+const args = message.content.slice(prefix.length).trim().split(/ +/);
 
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online`)
@@ -18,20 +19,18 @@ bot.on("ready", async () => {
 
  bot.on('message', message => {
      if (!message.content.startsWith(prefix) || message.author.bot) return;
-   })
 
-const args = message.content.slice(prefix.length).trim().split(' ');
-const command = args.shift().toLowerCase();
+	const args = message.content.slice(prefix.length).trim().split(/ +/);
+	const command = args.shift().toLowerCase();
+	 
+	 else if (command === 'kick') {
+	const taggedUser = message.mentions.users.first();
 
- bot.on('message', message => {
-     if (command === 'args-info') {
-	    if (!args.length) {
-		    return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+	message.channel.send(`You wanted to kick: ${taggedUser.username}`);
 	}
-
-	message.channel.send(`Command name: ${command}\nArguments: ${args}`);
-}
+    }
 })
+
 
  bot.on('message', message => {
      if (message.content === `${prefix}bot`) {
