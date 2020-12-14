@@ -3,22 +3,25 @@ const config = require('./config.json');
 const { prefix } = require('./config.json');
 const bot = new Discord.Client({disableEveryone: true})
 
-// bot.on('ready', function () {
-//   console.log("Le bot est connecté !")
-// })
-
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online`)
     bot.user.setActivity("Space Engineers", {type: ""});
 })
-
-// Message de réponse //
 
  bot.on('message', message => {
      if (message.content === `${prefix}1`) {
        message.channel.send('et 2 et 3')
      }
    })
+
+// Message de réponse //
+
+ bot.on('message', message => {
+     if (!message.content.startsWith(prefix) || message.author.bot) return;
+   })
+
+const args = message.content.slice(prefix.length).trim().split(' ');
+const command = args.shift().toLowerCase();
 
  bot.on('message', message => {
      if (message.content === `${prefix}bot`) {
