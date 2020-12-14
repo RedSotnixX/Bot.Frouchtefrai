@@ -67,12 +67,6 @@ bot.on("message", async message => {
 //   })
 
  bot.on('message', message => {
-     if (message.content === `${prefix}help`) {
-       message.channel.send('Les commandes disponibles sont ```f/1``` et ```f/help``` Pour Amoug us la commande help est ```f/au help```')
-     }
-   })
-  
- bot.on('message', message => {
      if (message.content === `${prefix}serveur`) {
        message.channel.send(`Nom du serveur: ${message.guild.name}\nNombre total de membres: ${message.guild.memberCount}`);
      }
