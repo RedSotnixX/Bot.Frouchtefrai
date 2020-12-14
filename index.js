@@ -26,6 +26,14 @@ bot.on("ready", async () => {
      }
    })
 
+ // Commence avec le préfix //
+
+// bot.on('message', message => {
+//     if (message.content.startsWith(`${prefix}ping`)) {
+//       message.channel.send('je suis là :D')
+//     }
+//   })
+
  bot.on('message', message => {
      if (message.content === `${prefix}help`) {
        message.channel.send('Les commandes disponibles sont ```f/1``` et ```f/help``` Pour Amoug us la commande help est ```f/au help```')
