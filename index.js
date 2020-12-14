@@ -15,15 +15,21 @@ bot.on("ready", async () => {
 // Message de réponse //
 
  bot.on('message', message => {
-     if (message.content === `${prefix}ping`) {
+     if (message.content === `${prefix}1`) {
        message.channel.send('et 2 et 3')
      }
    })
 
-// bot.on('message', message => {
-//     if (message.content === 'f/help') {
-//       message.channel.send('Les commandes disponibles sont ```f/1``` et ```f/help``` Pour Amoug us la commande help est ```f/au help```')
-//     }
-//   })
+ bot.on('message', message => {
+     if (message.content === `${prefix}bot`) {
+       message.reply('je suis là :D')
+     }
+   })
+
+ bot.on('message', message => {
+     if (message.content === `${prefix}help`) {
+       message.channel.send('Les commandes disponibles sont ```f/1``` et ```f/help``` Pour Amoug us la commande help est ```f/au help```')
+     }
+   })
   
 bot.login(process.env.BOT_TOKEN)
