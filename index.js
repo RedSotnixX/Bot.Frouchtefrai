@@ -65,7 +65,7 @@ bot.on("message", async message => {
 //       message.channel.send('je suis là :D')
 //     }
 //   })
-
+  
  bot.on('message', message => {
      if (message.content === `${prefix}serveur`) {
        message.channel.send(`Nom du serveur: ${message.guild.name}\nNombre total de membres: ${message.guild.memberCount}`);
@@ -79,3 +79,4 @@ bot.on("message", async message => {
    })
 
 bot.login(process.env.BOT_TOKEN)
+//bot.login('NzQzMTgyNTM2MTUwMDg5ODYw.XzQ8rA.MxoDLXplPaxt6yCHUrn6D8VELf4')

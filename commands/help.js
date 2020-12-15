@@ -22,9 +22,9 @@ module.exports = {
         .setTimestamp()
 
         const utility = new Discord.MessageEmbed()
-        .setTitle('Utile')
-        .addField('`f/serveur`', 'Vous donne des infos sur le serveur')
-        .addField('`f/moi`', 'Voud donne des infos sur vous')
+        .setTitle('Pas encore défini')
+        .addField('`f/`', 'Pas encore défini')
+        .addField('`f/`', 'Pas encore défini')
         .addField('`f/`', 'Pas encore défini')
         .addField('`f/`', 'Pas encore défini')
         .setTimestamp()
