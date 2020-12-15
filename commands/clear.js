@@ -6,11 +6,11 @@ module.exports = {
 
         const amount = args.join(" ");
 
-        if(!amount) return message.reply('please provide an amount of messages for me to delete')
+        if(!amount) return message.reply('Merci de mettre un nombre de message à supprimer')
 
-        if(amount > 100) return message.reply(`you cannot clear more than 100 messages at once`)
+        if(amount > 100) return message.reply(`Tu ne peux pas supprimer plus de 100 messages d'un coup`)
 
-        if(amount < 1) return message.reply(`you need to delete at least one message`)
+        if(amount < 1) return message.reply(`Tu doit supprimer au moins un message`)
 
         await message.channel.messages.fetch({limit: amount}).then(messages => {
             message.channel.bulkDelete(messages
