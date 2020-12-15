@@ -55,6 +55,11 @@ bot.on("message", async message => {
     }
 })
 
+bot.on('message', message => {
+  if(message.content === `${prefix}2` && message.author.id === '491312416098091028'){
+    message.channel.send('YEET')}
+  }
+)
 
 // Message de réponse //
 
@@ -90,5 +95,5 @@ bot.on("message", async message => {
      }
    })
 
-bot.login(process.env.BOT_TOKEN)
-//bot.login('NzQzMTgyNTM2MTUwMDg5ODYw.XzQ8rA.0Mdl0ENKtkv45ddAtud8aK0oOzU')
+//bot.login(process.env.BOT_TOKEN)
+bot.login('NzQzMTgyNTM2MTUwMDg5ODYw.XzQ8rA.MZHnlYxosTyybA9wWK1jjp2hxPs')
