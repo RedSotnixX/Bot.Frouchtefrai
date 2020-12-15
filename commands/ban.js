@@ -6,17 +6,17 @@ module.exports = {
 
     async run (bot, message, args) {
 
-        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('You can\'t use that!')
-        if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send('I don\'t have the right permissions.')
+        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('Tu ne peux pas utiliser ça')
+        if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send('Tu n\'as pas la permission')
 
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
 
-        if(!args[0]) return message.channel.send('Please specify a user');
+        if(!args[0]) return message.channel.send('Merci de spécifier un utilisateur');
 
-        if(!member) return message.channel.send('Can\'t seem to find this user. Sorry \'bout that :/');
-        if(!member.bannable) return message.channel.send('This user can\'t be banned. It is either because they are a mod/admin, or their highest role is higher than mine');
+        if(!member) return message.channel.send('Je n\'arrive pas à trouver cette utilisateur');
+        if(!member.bannable) return message.channel.send('Désolé mais tu ne peux pas ban cette utilisateur');
 
-        if(member.id === message.author.id) return message.channel.send('Bruh, you can\'t ban yourself!');
+        if(member.id === message.author.id) return message.channel.send('Tu ne peux pas te ban !');
 
         let reason = args.slice(1).join(" ");
 
@@ -24,7 +24,7 @@ module.exports = {
 
         member.ban(reason)
         .catch(err => {
-            if(err) return message.channel.send('Something went wrong')
+            if(err) return message.channel.send('Il y a une erreur')
         })
 
         const banembed = new Discord.MessageEmbed()
