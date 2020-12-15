@@ -8,6 +8,18 @@ bot.on("ready", async () => {
     bot.user.setActivity("Space Engineers", {type: ""});
 })
 
+const client = require('discord-rich-presence')('778283566651146270');
+ 
+client.updatePresence({
+  state: 'Ne joue pas',
+  details: 'Actuellement en ligne',
+  startTimestamp: Date.now(),
+  endTimestamp: Date.now() + 1337,
+  largeImageKey: 'premier',
+  smallImageKey: 'deuxieme',
+  instance: true,
+});
+
 const { readdirSync } = require('fs');
 
 const { join } = require('path');
@@ -79,4 +91,4 @@ bot.on("message", async message => {
    })
 
 bot.login(process.env.BOT_TOKEN)
-//bot.login('NzQzMTgyNTM2MTUwMDg5ODYw.XzQ8rA.MxoDLXplPaxt6yCHUrn6D8VELf4')
+//bot.login('NzQzMTgyNTM2MTUwMDg5ODYw.XzQ8rA.0Mdl0ENKtkv45ddAtud8aK0oOzU')
