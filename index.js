@@ -95,5 +95,5 @@ bot.on('message', message => {
      }
    })
 
-//bot.login(process.env.BOT_TOKEN)
-bot.login('NzQzMTgyNTM2MTUwMDg5ODYw.XzQ8rA.MZHnlYxosTyybA9wWK1jjp2hxPs')
+bot.login(process.env.BOT_TOKEN)
+//bot.login('NzQzMTgyNTM2MTUwMDg5ODYw.XzQ8rA.MZHnlYxosTyybA9wWK1jjp2hxPs')
