@@ -19,6 +19,7 @@ module.exports = {
         const fun = new Discord.MessageEmbed()
         .setTitle('Fun')
         .addField('`f/ascii`', 'Convertir un text en ascii')
+        .addField('`f/meme`', 'Afficher un meme aléatoire')
         .setTimestamp()
 
         const utility = new Discord.MessageEmbed()
