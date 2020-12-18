@@ -5,7 +5,7 @@ const bot = new Discord.Client({disableEveryone: true})
 
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online`)
-    bot.user.setActivity("Super smash bros", {type: ""});
+    bot.user.setActivity("Rocket League", {type: ""});
 })
 
 const client = require('discord-rich-presence')('778283566651146270');
