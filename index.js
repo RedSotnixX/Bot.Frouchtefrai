@@ -8,7 +8,7 @@ bot.on("ready", async () => {
     bot.user.setActivity("Rocket League", {type: ""});
 })
 
-const client = require('discord-rich-presence')('743182536150089860');
+const client = require('discord-rich-presence')('778283566651146270');
  
 client.updatePresence({
   state: 'Ne joue pas',
