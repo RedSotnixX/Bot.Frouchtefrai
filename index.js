@@ -13,8 +13,6 @@ const client = require('discord-rich-presence')('778283566651146270');
 client.updatePresence({
   state: 'Ne joue pas',
   details: 'Actuellement en ligne',
-  startTimestamp: Date.now(),
-  endTimestamp: Date.now() + 1337,
   largeImageKey: 'premier',
   smallImageKey: 'deuxieme',
   instance: true,
