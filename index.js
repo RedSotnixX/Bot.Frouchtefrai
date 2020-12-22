@@ -68,7 +68,7 @@ bot.on('message', message => {
    })
 
  bot.on('message', message => {
-     if (message.content === `@Frouchtefrai`) {
+     if (message.mentions.user.first().id == Client.user.id) {
        message.reply('Oui ?')
      }
    })
