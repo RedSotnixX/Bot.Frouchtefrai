@@ -68,8 +68,8 @@ bot.on('message', message => {
    })
 
  bot.on('message', message => {
-     if (message.mentions.user.first().id == Client.user.id) {
-       message.reply('Oui ?')
+     if (message.mentions.users.first() == bot.user.id) {
+       message.reply('il y a un problème ?')
      }
    })
 
