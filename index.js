@@ -1,14 +1,23 @@
 const Discord = require('discord.js')
 const config = require('./config.json');
+const bdd = require("./bdd.json");
+const fs = require("fs");
 const { prefix } = require('./config.json');
 const bot = new Discord.Client({disableEveryone: true})
 
+//  DEMARAGE  //
+
 bot.on("ready", async () => {
-    console.log(`${bot.user.username} is online`)
-    bot.user.setActivity("Rocket League", {type: ""});
+    console.log(`${bot.user.username} est connecté`)
+    bot.user.setStatus("dnd")
+    setTimeout(() => {
+        bot.user.setActivity("f/help", {type: "WATCHING"});
+    }, 1000)
 })
 
-const client = require('discord-rich-presence')('778283566651146270');
+//  RICH PRENSENCE  //
+
+/* const client = require('discord-rich-presence')('778283566651146270');
  
 client.updatePresence({
   state: 'Ne joue pas',
@@ -16,11 +25,14 @@ client.updatePresence({
   largeImageKey: 'premier',
   smallImageKey: 'deuxieme',
   instance: true,
-});
+}); */
+
+//  COMMANDS DOSSIER  //
 
 const { readdirSync } = require('fs');
 
 const { join } = require('path');
+const { createConnection } = require('net');
 
 bot.commands= new Discord.Collection();
 
@@ -53,47 +65,80 @@ bot.on("message", async message => {
     }
 })
 
+//  MESSAGE DE REPONSE  //
+
 bot.on('message', message => {
-  if(message.content === `${prefix}2` && message.author.id === '491312416098091028'){
-    message.channel.send('YEET')}
-  }
-)
+    if (message.content === `${prefix}1`) {
+      message.channel.send('et 2 et 3')
+    }
+  })
 
-// Message de réponse //
+bot.on('message', message => {
+    if (message.mentions.users.first() == bot.user.id) {
+      message.reply('il y a un problème ?')
+    }
+  })
 
- bot.on('message', message => {
-     if (message.content === `${prefix}1`) {
-       message.channel.send('et 2 et 3')
-     }
-   })
+bot.on('message', message => {
+    if(message.content === `${prefix}2` && message.author.id === '491312416098091028'){
+      message.channel.send('YEET')}
+    }
+  )
 
- bot.on('message', message => {
-     if (message.mentions.users.first() == bot.user.id) {
-       message.reply('il y a un problème ?')
-     }
-   })
+bot.on('message', message => {
+    if (message.content === `${prefix}moi`) {
+      message.channel.send(`Nom d'utilisateur: ${message.author.username}\nTon ID: ${message.author.id}`);
+    }
+  })
 
- // Commence avec le préfix //
+bot.on('message', message => {
+    if (message.content === `${prefix}serveur`) {
+      message.channel.send(`Nom du serveur: ${message.guild.name}\nNombre total de membres: ${message.guild.memberCount}`);
+    }
+  })
+
+// COMMENCE AVEC LE PREFIX  //
 
 // bot.on('message', message => {
 //     if (message.content.startsWith(`${prefix}ping`)) {
 //       message.channel.send('je suis là :D')
 //     }
 //   })
-  
- bot.on('message', message => {
-     if (message.content === `${prefix}serveur`) {
-       message.channel.send(`Nom du serveur: ${message.guild.name}\nNombre total de membres: ${message.guild.memberCount}`);
-     }
-   })
 
- bot.on('message', message => {
-     if (message.content === `${prefix}moi`) {
-       message.channel.send(`Nom d'utilisateur: ${message.author.username}\nTon ID: ${message.author.id}`);
-     }
-   })
+//  MESSAGE DE BIENVENUE  //
 
+/* bot.on("guildMemberAdd", member => {
+  if (bdd["message-bienvenue"]) {
+      bot.channels.cache.get('ID_CHANNEL_DE_BIENVENUE').send(bdd["message-bienvenue"] + `${member.user.username}`);
+  } else {
+      bot.channels.cache.get('ID_CHANNEL_DE_BIENVENUE').send("Bienvenue sur le serveur");
+  }
+  member.roles.add('ID_ROLE_DE_BIENVENUE');
 
+}) */
+
+bot.on('message', message => {
+  if(message.content.startsWith(`f/b`)){
+    message.delete()
+    if(message.member.hasPermission('MANAGE_MESSAGES')){
+      if(message.content.length > 5){
+        message_bienvenue = message.content.slice(4)
+        bdd["message-bienvenue"] = message_bienvenue
+        Savebdd()
+      }
+    }
+  }
+})
+
+//test
+
+bot.on('message', message => {
+  if(message.content === `${prefix}test` && message.author.id === '491312416098091028'){
+    message.reply(bdd["message-bienvenue"])}
+  }
+)
+
+//  MUSIQUE MARCHE PAS SUR HEROKU //
 
 /* const ytdl = require("ytdl-core");
 
@@ -223,6 +268,11 @@ function play(guild, song) {
   serverQueue.textChannel.send(`Musique en cours : **${song.title}**`);
 } */
 
+function Savebdd() {
+  fs.writeFile("./bdd.json", JSON.stringify(bdd, null, 4), (err) => {
+      if (err) message.channel.send("Une erreur est survenue.");
+  });
+}
 
 bot.login(process.env.BOT_TOKEN)
 //bot.login('TOKEN')
