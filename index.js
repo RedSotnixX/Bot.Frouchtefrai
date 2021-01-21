@@ -95,7 +95,7 @@ bot.on('message', message => {
 
 
 
-const ytdl = require("ytdl-core");
+/* const ytdl = require("ytdl-core");
 
 const queue = new Map();
    
@@ -221,7 +221,7 @@ function play(guild, song) {
    .on("error", error => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
   serverQueue.textChannel.send(`Musique en cours : **${song.title}**`);
-}
+} */
 
 
 bot.login(process.env.BOT_TOKEN)
