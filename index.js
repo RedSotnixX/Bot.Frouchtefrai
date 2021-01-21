@@ -65,6 +65,52 @@ bot.on("message", async message => {
     }
 })
 
+//  COMMANDE DE STATS  //
+
+bot.on('message', message => {
+  if (message.content.startsWith(`${prefix}stats`)) {
+    let onlines = message.guild.members.cache.filter(({ presence }) => presence.status !== 'offline').size;
+    let totalmembers = message.guild.members.cache.size;
+    let totalservers = bot.guilds.cache.size;
+    let totalbots = message.guild.members.cache.filter(member => member.user.bot).size;
+    /* let total_news = message.guild.roles.cache.get('ID_ROLE_DES_NOUVEAUX_MEMBRES').members.size; */
+  
+    const EmbedStats = new Discord.MessageEmbed()
+        .setColor('#0099ff')
+        .setTitle('Code source')
+        .setURL('https://github.com/RedStonixX')
+        .setAuthor('Bot Frouchtefrai', 'https://www.bricorama.fr/media/catalog/product/7/1/71219ff1154b5a1e7d23bc864fe203043da543ce_5164375z321386.jpg', 'https://discord.js.org')
+        .setDescription('Voici les statistiques du serveur')
+        //.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+        .addFields({
+            name: 'Nombre de membres sur le serveur',
+            value: totalmembers,
+            inline: true
+        }, {
+            name: 'Membres connéctés : ',
+            value: onlines,
+            inline: true
+        }, {
+            name: 'Nombre de serveurs auquel le bot appartient : ',
+            value: totalservers,
+            inline: true
+        }, {
+            name: 'Nombres de bots sur le serveur : ',
+            value: totalbots,
+            inline: true
+        }, /* {
+            name: 'Nombre d\'arrivants : ',
+            value: total_news,
+            inline: true
+        },  */)
+        //.setImage('https://i.imgur.com/wSTFkRM.png')
+        .setTimestamp()
+        .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+  
+    message.channel.send(EmbedStats);
+  }
+})
+
 //  MESSAGE DE REPONSE  //
 
 bot.on('message', message => {
@@ -274,5 +320,5 @@ function Savebdd() {
   });
 }
 
-bot.login(process.env.BOT_TOKEN)
-//bot.login('TOKEN')
+//bot.login(process.env.BOT_TOKEN)
+bot.login('NzQzMTgyNTM2MTUwMDg5ODYw.XzQ8rA.Z-UP1rlKUK2qgTZjRKPW_bzFpno')
