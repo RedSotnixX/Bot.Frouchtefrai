@@ -202,7 +202,7 @@ bot.on('message', message => {
 
 //  MUSIQUE MARCHE PAS SUR HEROKU //
 
-const ytdl = require("ytdl-core");
+/* const ytdl = require("ytdl-core");
 
 bot.on('message', message => {
   const serverQueue = queue.get(message.guild.id);
@@ -321,7 +321,7 @@ function play(guild, song) {
       .on("error", error => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
   serverQueue.textChannel.send(`Start playing: **${song.title}**`);
-}
+} */
 
 bot.login(process.env.BOT_TOKEN)
 //bot.login('TOKEN')
