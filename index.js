@@ -179,7 +179,7 @@ bot.on('message', message => {
 
 }) */
 
-bot.on('message', message => {
+/* bot.on('message', message => {
   if(message.content.startsWith(`f/b`)){
     message.delete()
     if(message.member.hasPermission('MANAGE_MESSAGES')){
@@ -190,7 +190,7 @@ bot.on('message', message => {
       }
     }
   }
-})
+}) */
 
 //test
 
