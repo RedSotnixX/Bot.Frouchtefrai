@@ -31,7 +31,7 @@ module.exports = {
         .addField('`f/météo`', 'Voir la météo')
         .addField('`f/say`', 'Faire parler le bot (Admin)')
         .addField('`f/stats`', 'Voir les stats du serveur et du bot')
-        .addField('`f/moi`', 'Voir des infos sur soi')
+        .addField('`f/info`', 'Voir des infos sur soi')
         .addField('`f/serveur`', 'Voir peu d\'infos sur le serveur')
         .setTimestamp()
 

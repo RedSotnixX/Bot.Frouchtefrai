@@ -172,11 +172,7 @@ bot.on('message', message => {
 
 bot.on('message', message => {
   if (message.content === `${prefix}info`) {
-    if(message.mentions.users.first()) {
-        user = message.mentions.users.first();
-   } else{
-        user = message.author;
-    }
+    const user = message.mentions.users.first() ? message.mentions.users.first() : message.author;
     const member = message.guild.member(user);
 
     const embed = new Discord.MessageEmbed() 
@@ -351,5 +347,5 @@ function play(guild, song) {
   serverQueue.textChannel.send(`Start playing: **${song.title}**`);
 } */
 
-bot.login(process.env.BOT_TOKEN)
-//bot.login('TOKEN')
+//bot.login(process.env.BOT_TOKEN)
+bot.login('NzQzMTgyNTM2MTUwMDg5ODYw.XzQ8rA.URgz9iJd_sIHk3amP1XGxrO-tQc')
