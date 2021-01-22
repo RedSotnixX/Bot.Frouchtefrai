@@ -33,7 +33,7 @@ const { readdirSync } = require('fs');
 
 const { join } = require('path');
 const { createConnection } = require('net');
-const { rightArithShift } = require('mathjs');
+const { rightArithShift, re } = require('mathjs');
 
 bot.commands= new Discord.Collection();
 
@@ -234,7 +234,7 @@ bot.on("message", async message => {
     stop(message, serverQueue);
     return;
   } else {
-    message.channel.send("La commande est invalide !");
+    return;
   }
 });
    
