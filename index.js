@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const config = require('./config.json');
 const bdd = require("./bdd.json");
 const fs = require("fs");
+const moment = require('moment');
 const { prefix } = require('./config.json');
 const bot = new Discord.Client({disableEveryone: true})
 
