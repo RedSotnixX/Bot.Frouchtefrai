@@ -82,6 +82,7 @@ bot.giveawaysManager = new GiveawaysManager(bot, {
     }
 });
 
+
 //  COMMANDE DE STATS  //
 
 bot.on('message', message => {
