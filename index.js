@@ -320,5 +320,5 @@ function Savebdd() {
   });
 }
 
-//bot.login(process.env.BOT_TOKEN)
-bot.login('NzQzMTgyNTM2MTUwMDg5ODYw.XzQ8rA.Z-UP1rlKUK2qgTZjRKPW_bzFpno')
+bot.login(process.env.BOT_TOKEN)
+//bot.login('TOKEN')
