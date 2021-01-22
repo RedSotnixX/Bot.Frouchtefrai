@@ -3,7 +3,7 @@ const weather = require('weather-js');
 const Discord = require('discord.js');
 
 module.exports = {
-    name: "weather",
+    name: "météo",
     description: "Checks a weather forecast",
 
     async run (bot, message, args){
