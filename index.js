@@ -103,16 +103,16 @@ bot.on('message', message => {
             value: totalmembers,
             inline: true
         }, {
+            name: 'Nombres de bots sur le serveur : ',
+            value: totalbots,
+            inline: true
+        }, {
             name: 'Membres connéctés : ',
             value: onlines,
             inline: true
         }, {
             name: 'Nombre de serveurs auquel le bot appartient : ',
             value: totalservers,
-            inline: true
-        }, {
-            name: 'Nombres de bots sur le serveur : ',
-            value: totalbots,
             inline: true
         }, /* {
             name: 'Nombre d\'arrivants : ',
