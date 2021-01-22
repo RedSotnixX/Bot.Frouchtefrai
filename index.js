@@ -191,7 +191,7 @@ bot.on('message', message => {
     .addField('Joue a :', `${user.presence.game ? user.presence.game.name : 'Rien'}`, true)
     .addField('Roles :', member.roles.cache.map(roles => `${roles.name}`).join(', '), true)
     .addField(`En réponse a :`,`${message.author.username}#${message.author.discriminator}`)
-message.channel.send(embed).then(message => message.delete({ timeout: 15000 }));
+message.channel.send(embed).then(message => message.delete({ timeout: 30000 }));
 }
 })
 
