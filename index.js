@@ -33,6 +33,7 @@ const { readdirSync } = require('fs');
 
 const { join } = require('path');
 const { createConnection } = require('net');
+const { rightArithShift } = require('mathjs');
 
 bot.commands= new Discord.Collection();
 
@@ -65,12 +66,27 @@ bot.on("message", async message => {
     }
 })
 
+//  GIVEAWAY  //
+
+const { GiveawaysManager } = require('discord-giveaways');
+
+bot.giveawaysManager = new GiveawaysManager(bot, {
+    storage: "./giveaways.json",
+    updateCountdownEvery: 5000,
+    default: {
+        botsCanWin: false,
+        exemptPermissions: [],
+        embedColor: "#FF0000",
+        reaction: "🎉"
+    }
+});
+
 //  COMMANDE DE STATS  //
 
 bot.on('message', message => {
   if (message.content.startsWith(`${prefix}stats`)) {
-    let onlines = message.guild.members.cache.filter(({ presence }) => presence.status !== 'offline').size;
-    let totalmembers = message.guild.members.cache.size;
+    let onlines = message.guild.members.cache.filter(member => !member.user.bot && member.presence.status !== "offline").size;
+    let totalmembers = message.guild.members.cache.filter(member => !member.user.bot).size;
     let totalservers = bot.guilds.cache.size;
     let totalbots = message.guild.members.cache.filter(member => member.user.bot).size;
     /* let total_news = message.guild.roles.cache.get('ID_ROLE_DES_NOUVEAUX_MEMBRES').members.size; */
@@ -79,8 +95,8 @@ bot.on('message', message => {
         .setColor('#0099ff')
         .setTitle('Code source')
         .setURL('https://github.com/RedStonixX')
-        .setAuthor('Bot Frouchtefrai', 'https://www.bricorama.fr/media/catalog/product/7/1/71219ff1154b5a1e7d23bc864fe203043da543ce_5164375z321386.jpg', 'https://discord.js.org')
-        .setDescription('Voici les statistiques du serveur')
+        .setAuthor('Bot Frouchtefrai', 'https://cdn.manomano.com/images/sheets/legrand-prise-de-courant-avec-terre-neptune-blanc-P-521680-1684965_1.jpg', 'https://discord.js.org')
+        .setDescription('Voici les statistiques')
         //.setThumbnail('https://i.imgur.com/wSTFkRM.png')
         .addFields({
             name: 'Nombre de membres sur le serveur',
@@ -105,7 +121,7 @@ bot.on('message', message => {
         },  */)
         //.setImage('https://i.imgur.com/wSTFkRM.png')
         .setTimestamp()
-        .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+        .setFooter('Red_StonixX', 'https://cdn.discordapp.com/avatars/491312416098091028/093d164ecfc547ab88f12d93e93ac48f.webp?size=1024');
   
     message.channel.send(EmbedStats);
   }
@@ -186,7 +202,7 @@ bot.on('message', message => {
 
 //  MUSIQUE MARCHE PAS SUR HEROKU //
 
-/* const ytdl = require("ytdl-core");
+const ytdl = require("ytdl-core");
 
 const queue = new Map();
    
@@ -312,7 +328,7 @@ function play(guild, song) {
    .on("error", error => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
   serverQueue.textChannel.send(`Musique en cours : **${song.title}**`);
-} */
+}
 
 function Savebdd() {
   fs.writeFile("./bdd.json", JSON.stringify(bdd, null, 4), (err) => {

@@ -1,3 +1,5 @@
 {
-    "prefix": "f/"
+    "prefix": "f/",
+    "everyoneMention": false,
+    "hostedBy": true
 }
