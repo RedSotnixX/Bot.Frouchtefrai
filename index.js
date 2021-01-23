@@ -172,10 +172,14 @@ bot.on('message', message => {
 //  INFO  //
 
 bot.on('message', message => {
-  if (message.content === `${prefix}info`) {
-    const user = message.mentions.users.first() ? message.mentions.users.first() : message.author;
+  if (message.content.startsWith(`${prefix}info`)) {
+    if(message.mentions.users.first()) {
+        user = message.mentions.users.first();
+   } else{
+        user = message.author;
+    }
     const member = message.guild.member(user);
-
+    console.log(user);
     const embed = new Discord.MessageEmbed() 
     .setColor('#ff5555')
     .setThumbnail(user.avatarURL)
