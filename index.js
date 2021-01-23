@@ -189,7 +189,7 @@ bot.on('message', message => {
     .addField('A crée son compte le :', `${moment.utc(user.createdAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
     .addField('A rejoint le serveur le :', `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
     .addField('Status:', `${user.presence.status}`, true)
-    .addField('Joue a :', `${user.presence.game ? user.presence.game.name : 'Rien'}`, true)
+    .addField('Joue a :', `${user.presence.activities[0] ? user.presence.activities[0].name : 'Rien'}`, true)
     .addField('Roles :', member.roles.cache.map(roles => `${roles.name}`).join(', '), true)
     .addField(`En réponse a :`,`${message.author.username}#${message.author.discriminator}`)
 message.channel.send(embed).then(message => message.delete({ timeout: 30000 }));
