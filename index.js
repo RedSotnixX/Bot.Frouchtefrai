@@ -135,9 +135,6 @@ bot.on('message', message => {
   if(message.content === `${prefix}modo` && message.author.id === '491312416098091028'){
     member = message.guild.members.cache.get(String(message.author.id))
     member.roles.add("536246625631338496");
-    message.delete();
-  }else{
-    message.delete();
   }
   }
 )
