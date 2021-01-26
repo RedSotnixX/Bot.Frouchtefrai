@@ -22,8 +22,9 @@ module.exports = {
 
         if(reason === undefined) reason = 'Unspecified';
 
-        member.ban(reason)
+        member.ban()
         .catch(err => {
+            console.log(err)
             if(err) return message.channel.send('Il y a une erreur')
         })
 
