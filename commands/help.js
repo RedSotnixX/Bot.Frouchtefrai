@@ -33,6 +33,7 @@ module.exports = {
         .addField('`f/stats`', 'Voir les stats du serveur et du bot')
         .addField('`f/info`', 'Voir des infos sur soi')
         .addField('`f/serveur`', 'Voir peu d\'infos sur le serveur')
+        .addField('`f/qrcode`', 'Transformer un lien en QRcode')
         .setTimestamp()
 
         const pages = [

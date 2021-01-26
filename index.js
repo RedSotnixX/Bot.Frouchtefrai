@@ -139,13 +139,21 @@ bot.on('message', message => {
   }
 )
 
-//  MESSAGE DE REPONSE  //
+//  SKYPE PHYSIQUE  //
 
 bot.on('message', message => {
+  if(message.content === `${prefix}physique` && message.author.id === '695314219016519701'){
+    message.channel.send('https://join.skype.com/pIwnF5fYtYHP')}
+  }
+)
+
+//  MESSAGE DE REPONSE  //
+
+/* bot.on('message', message => {
     if (message.content === `${prefix}1`) {
       message.channel.send('et 2 et 3')
     }
-  })
+  }) */
 
 bot.on('message', message => {
     if (message.mentions.users.first() == bot.user.id) {
@@ -153,11 +161,11 @@ bot.on('message', message => {
     }
   })
 
-bot.on('message', message => {
+/* bot.on('message', message => {
     if(message.content === `${prefix}2` && message.author.id === '491312416098091028'){
       message.channel.send('YEET')}
     }
-  )
+  ) */
 
 /* bot.on('message', message => {
     if (message.content === `${prefix}moi`) {
@@ -383,5 +391,5 @@ function play(guild, song) {
   serverQueue.textChannel.send(`Start playing: **${song.title}**`);
 } */
 
-bot.login(process.env.BOT_TOKEN)
-//bot.login('TOKEN')
+//bot.login(process.env.BOT_TOKEN)
+bot.login('NzQzMTgyNTM2MTUwMDg5ODYw.XzQ8rA.z1mR_qxxItRgFrNquwOh3vKm-QU')
