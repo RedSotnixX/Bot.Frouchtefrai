@@ -139,6 +139,14 @@ bot.on('message', message => {
   }
 )
 
+//  LIEN INVITATION //
+
+bot.on('message', message => {
+  if (message.content === `${prefix}invite`) {
+    message.channel.send('https://discord.com/api/oauth2/authorize?client_id=743182536150089860&permissions=8&scope=bot')
+  }
+})
+
 //  SKYPE PHYSIQUE  //
 
 bot.on('message', message => {
