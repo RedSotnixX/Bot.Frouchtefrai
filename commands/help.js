@@ -14,6 +14,10 @@ module.exports = {
         .addField('`f/kick`', 'Kicks un membre du serveur')
         .addField('`f/ban`', 'Bans un membre du serveur')
         .addField('`f/clear`', 'Clear les messages')
+        .addField('`f/giverole`', 'Donner un role')
+        .addField('`f/removerole`', 'Enlever un role')
+        .addField('`f/hasrole`', 'Savoir les roles d\'un utilisateur')
+        .addField('`f/nickname`', 'Indisponible')
         .setTimestamp()
 
         const fun = new Discord.MessageEmbed()
@@ -34,6 +38,7 @@ module.exports = {
         .addField('`f/info`', 'Voir des infos sur soi')
         .addField('`f/serveur`', 'Voir peu d\'infos sur le serveur')
         .addField('`f/qrcode`', 'Transformer un lien en QRcode')
+        .addField('`f/poll`', 'Ajouter un 👍 et 👎 à son message')
         .setTimestamp()
 
         const pages = [

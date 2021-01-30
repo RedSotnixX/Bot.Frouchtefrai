@@ -1,6 +1,11 @@
 const Discord = require('discord.js')
 const config = require('./config.json');
 const bdd = require("./bdd.json");
+
+const roleClaim = require('./commands/role-claim')
+const poll = require('./commands/poll')
+const memberCount = require('./commands/member-count')
+
 const fs = require("fs");
 const moment = require('moment');
 const { prefix } = require('./config.json');
@@ -14,6 +19,10 @@ bot.on("ready", async () => {
     setTimeout(() => {
         bot.user.setActivity("f/help", {type: "WATCHING"});
     }, 1000)
+
+    //memberCount(bot)
+    poll(bot)
+    roleClaim(bot)
 })
 
 //  RICH PRENSENCE  //
@@ -131,13 +140,13 @@ bot.on('message', message => {
 
 //  ELIRION ADD MODO  //
 
-bot.on('message', message => {
+/* bot.on('message', message => {
   if(message.content === `${prefix}modo` && message.author.id === '491312416098091028'){
     member = message.guild.members.cache.get(String(message.author.id))
     member.roles.add("536246625631338496");
   }
   }
-)
+) */
 
 //  LIEN INVITATION //
 
