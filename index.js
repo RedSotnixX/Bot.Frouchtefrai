@@ -4,6 +4,7 @@ const bdd = require("./bdd.json");
 
 const roleClaim = require('./commands/role-claim')
 const poll = require('./commands/poll')
+const poll2 = require('./commands/poll2')
 const memberCount = require('./commands/member-count')
 
 const fs = require("fs");
@@ -24,6 +25,7 @@ bot.on("ready", async () => {
     ChannelReady.send('Je suis lancé');
 
     //memberCount(bot)
+    poll2()
     poll(bot)
     roleClaim(bot)
 })
