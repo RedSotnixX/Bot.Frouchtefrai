@@ -38,7 +38,7 @@ module.exports = {
         .addField('`f/info`', 'Voir des infos sur soi')
         .addField('`f/serveur`', 'Voir peu d\'infos sur le serveur')
         .addField('`f/qrcode`', 'Transformer un lien en QRcode')
-        .addField('`f/poll`', 'Ajouter un 👍 et 👎 à son message')
+        .addField('`f/poll`', 'Ajouter un :x: et :white_check_mark: à son message')
         .setTimestamp()
 
         const pages = [

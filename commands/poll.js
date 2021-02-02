@@ -4,10 +4,10 @@ module.exports = (bot) => {
     ]
   
     const addReactions = (message) => {
-      message.react('👍')
+      message.react(':white_check_mark: ')
   
       setTimeout(() => {
-        message.react('👎')
+        message.react(':x:')
       }, 750)
     }
   
