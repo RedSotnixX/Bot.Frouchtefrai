@@ -20,7 +20,8 @@ bot.on("ready", async () => {
         bot.user.setActivity("f/help", {type: "WATCHING"});
     }, 1000)
 
-    message.guild.channels.cache.get("717351840550879275").send('Je suis lancé @Red_StonixX')
+    var ChannelReady = bot.channels.cache.get('717351840550879275');
+    ChannelReady.send('Je suis lancé');
 
     //memberCount(bot)
     poll(bot)
