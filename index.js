@@ -3,7 +3,7 @@ const config = require('./config.json');
 const bdd = require("./bdd.json");
 
 const roleClaim = require('./commands/role-claim')
-//const poll = require('./commands/poll')
+const poll = require('./commands/poll')
 const memberCount = require('./commands/member-count')
 
 const fs = require("fs");
@@ -24,7 +24,7 @@ bot.on("ready", async () => {
     ChannelReady.send('Je suis lancé');
 
     //memberCount(bot)
-    //poll(bot)
+    poll(bot)
     roleClaim(bot)
 })
 
@@ -153,7 +153,7 @@ bot.on('message', message => {
 
 //  Test aide //
 
-bot.on("message", async message => {
+/* bot.on("message", async message => {
   if(message.content === `${prefix}stest`) {
     message.channel.send(new Discord.MessageEmbed()
             .addField('Nom', message.guild.name, true)
@@ -169,7 +169,7 @@ bot.on("message", async message => {
             .setThumbnail(message.guild.iconURL())
             .setImage(message.guild.bannerURL()))
   }
-});
+}); */
 
 //  LIEN INVITATION //
 
