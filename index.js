@@ -303,5 +303,5 @@ if(message.content === `${prefix}ping`) {
 
 })
 
-//bot.login(process.env.BOT_TOKEN)
-bot.login('NzQzMTgyNTM2MTUwMDg5ODYw.XzQ8rA.bmW3IG4JvRFw7oHxIGWqtLeXie8')
+bot.login(process.env.BOT_TOKEN)
+//bot.login('TOKEN')
