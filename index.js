@@ -3,6 +3,7 @@ const config = require('./config.json');
 const bdd = require("./bdd.json");
 
 const roleClaim = require('./commands/role-claim')
+//const PCrole = require('./commands/pc-role-auto-give')
 const poll = require('./commands/poll')
 //const memberCount = require('./commands/member-count')
 //const memberCountPc = require('./commands/member-count-pc')
@@ -26,8 +27,10 @@ bot.on("ready", async () => {
 
     //memberCountPc(bot)
     //memberCount(bot)
+    //PCrole(bot)
     poll(bot)
     roleClaim(bot)
+
 })
 
 //  RICH PRENSENCE  //
