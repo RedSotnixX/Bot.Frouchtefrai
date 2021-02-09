@@ -4,8 +4,8 @@ const bdd = require("./bdd.json");
 
 const roleClaim = require('./commands/role-claim')
 const poll = require('./commands/poll')
-const memberCount = require('./commands/member-count')
-const memberCountPc = require('./commands/member-count-pc')
+//const memberCount = require('./commands/member-count')
+//const memberCountPc = require('./commands/member-count-pc')
 
 const fs = require("fs");
 const moment = require('moment');
@@ -24,8 +24,8 @@ bot.on("ready", async () => {
     var ChannelReady = bot.channels.cache.get('717351840550879275');
     ChannelReady.send('Je suis lancé');
 
-    memberCountPc(bot)
-    memberCount(bot)
+    //memberCountPc(bot)
+    //memberCount(bot)
     poll(bot)
     roleClaim(bot)
 })
@@ -99,14 +99,30 @@ bot.giveawaysManager = new GiveawaysManager(bot, {
 
 //  BIENVENUE 1-G1 Spé PC ///
 
-bot.on("guildMemberAdd", (member, guild) => {
-  if (guild.id !== "806209941660106762") return;
+bot.on("guildMemberAdd", (member) => {
+  if (member.guild.id !== "717351839963545639") return;
   
   var channel = bot.channels.cache.get('717351840550879275');
-  channel.send('Une personne a rejoin 1-G1 Spé PC');
+  channel.send('message');
 });
 
-
+/* bot.on("guildMemberAdd", (member, guild) => {
+  if (member.guild.id == "717351839963545639"){
+  
+  const channelId = '805168671781027872'
+  
+    const updateMembers = (guild) => {
+      const channel = guild.channels.cache.get(channelId)
+      channel.setName(`On est : ${guild.members.cache.filter(member => !member.user.bot).size}`);
+    }
+  
+    bot.on('guildMemberAdd', (member) => updateMembers(member.guild))
+    bot.on('guildMemberRemove', (member) => updateMembers(member.guild))
+  
+    //const guild = bot.guilds.cache.get('806209941660106762')
+    updateMembers(guild)
+  }
+}); */
 
 ///     COMMANDE MESSAGE      ///
 
