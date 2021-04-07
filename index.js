@@ -216,6 +216,13 @@ if(message.content === `${prefix}physique` && message.author.id === '69531421901
   message.channel.send('https://join.skype.com/pIwnF5fYtYHP')
 }
 
+//  MUSIQUE LYCEE //
+
+if(message.content === `${prefix}musique`){
+  var Channelmusique = bot.channels.cache.get('770607748865327125');
+  Channelmusique.send('https://www.youtube.com/watch?v=1j-eEYjv980');
+}
+
 
 //  MESSAGE SIMPLE  //
 
