@@ -235,7 +235,8 @@ if (message.content === `${prefix}1`) {
 
 
 if (message.mentions.users.first() == bot.user.id) {
-  message.reply('il y a un problème ?')
+  user = message.author;
+  message.channel.send(`${user.username}, il y a un problème ?`)
 }
 
 
@@ -343,4 +344,4 @@ if(message.content === `${prefix}ping`) {
 })
 
 bot.login(process.env.BOT_TOKEN)
-//bot.login('TOKEN')
+//bot.login('')
