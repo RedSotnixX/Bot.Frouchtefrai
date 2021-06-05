@@ -212,7 +212,7 @@ if (message.content === `${prefix}invite`) {
 //  Channel private  //
 
 
-if (message.content === `secret` && message.member.hasPermission('ADMINISTRATOR')) {
+if (message.content === `f/secret` && message.member.hasPermission('ADMINISTRATOR')) {
   const member = message.guild.member(message.author);
   const channel = bot.channels.cache.find(chan => chan.id === "845344125301162014")
   member.voice.setChannel(channel);
