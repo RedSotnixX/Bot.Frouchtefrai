@@ -343,7 +343,7 @@ if(message.content === `${prefix}ping`) {
 
           // Basic embed
             var embed = new Discord.MessageEmbed()
-            .setAuthor(`Your ping is ${ping} ms`)
+            .setAuthor(`Ton ping est : ${ping} ms`)
             .setColor("Your Color")
             
             // Then It Edits the message with the ping variable embed that you created
