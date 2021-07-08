@@ -245,17 +245,17 @@ if (message.content === `${prefix}1`) {
 
 // Réponse à @Red_StonixX //
 
-
-/* if (message.mentions.users.first() == '491312416098091028'){
-  user = '491312416098091028'
-  if (user => user.presence.status === "offline" && !player.user.bot){
-    user2 = message.author;
-    message.channel.send(`${user2.username}, il n'est actuellement pas disponible`)
-  }else{
-    message.channel.send("Il est disponible")
+if(message.mentions.users.size !== 0){
+  if (message.mentions.users.first().id == '491312416098091028'){
+    user = message.guild.members.cache.get('491312416098091028')
+    if (user.presence.status === "dnd"){
+      message.channel.send(`${message.author.username}, il n'est actuellement pas disponible`)
+    }else{
+      console.log("Une personne a fait @Red_StonixX")
+    }
   }
 }
- */
+
 //  Réponse à @Frouchtefrai //
 
 
