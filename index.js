@@ -87,6 +87,7 @@ bot.on("message", async message => {
 //  GIVEAWAY  //
 
 const { GiveawaysManager } = require('discord-giveaways');
+const { platform } = require('os');
 
 bot.giveawaysManager = new GiveawaysManager(bot, {
     storage: "./giveaways.json",
@@ -242,6 +243,19 @@ if (message.content === `${prefix}1`) {
 }
 
 
+// Réponse à @Red_StonixX //
+
+
+/* if (message.mentions.users.first() == '491312416098091028'){
+  user = '491312416098091028'
+  if (user => user.presence.status === "offline" && !player.user.bot){
+    user2 = message.author;
+    message.channel.send(`${user2.username}, il n'est actuellement pas disponible`)
+  }else{
+    message.channel.send("Il est disponible")
+  }
+}
+ */
 //  Réponse à @Frouchtefrai //
 
 
